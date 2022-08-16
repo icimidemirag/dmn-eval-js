@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="kural" name="Kural" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="12.2.1">
+  <decision id="Decision_0te96os" name="kural">
+    <decisionTable id="DecisionTable_1l4jilj">
+      <input id="InputClause_1mo2gl4" label="giris">
+        <inputExpression id="LiteralExpression_1e4pmv2" typeRef="string">
+          <text>giris</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0j147j5" label="cikis" name="cikis" typeRef="number" />
+      <rule id="DecisionRule_1m9ji9t">
+        <inputEntry id="UnaryTests_0wi49da">
+          <text>"a"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13wcyoa">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15l6zrx">
+        <inputEntry id="UnaryTests_1lt4t59">
+          <text>"b"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gf8ktp">
+          <text>2</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jqbezn">
+        <inputEntry id="UnaryTests_0jfe8r7">
+          <text>"c"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ihvx22">
+          <text>3</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ptgz70">
+        <inputEntry id="UnaryTests_0gvz4od">
+          <text>"d"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dv7b7s">
+          <text>4</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_05sfxgt">
+      <dmndi:DMNShape id="DMNShape_1lc43cw" dmnElementRef="Decision_0te96os">
+        <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
