@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="dish" name="Dish" namespace="http://camunda.org/schema/1.0/dmn" exporter="dmn-js (https://demo.bpmn.io/dmn)" exporterVersion="12.2.1">
+  <inputData id="InputData_12t6q7u" name="maas" />
+  <inputData id="InputData_04avhc9" name="sigorta" />
+  <decision id="Decision_0aglil2" name="matrah">
+    <informationRequirement id="InformationRequirement_12byzg0">
+      <requiredInput href="#InputData_12t6q7u" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1ci3f5q">
+      <requiredInput href="#InputData_04avhc9" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0frsty3">
+      <input id="InputClause_03ku5r7" label="maas">
+        <inputExpression id="LiteralExpression_1rrzuxm" typeRef="number">
+          <text>maas</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_147wvrz" label="sigorta">
+        <inputExpression id="LiteralExpression_0dqn3p5" typeRef="boolean">
+          <text>sigorta</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0r9pb9o" label="matrah" name="matrah" typeRef="number" />
+      <rule id="DecisionRule_0p3fjbu">
+        <inputEntry id="UnaryTests_1kglei1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oe5w3y">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0r3xe7k">
+          <text>maas - (maas * 0.15)</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0asffmo">
+        <inputEntry id="UnaryTests_0icek0m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wa3sey">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1t73n7y">
+          <text>maas</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_1adfd1s" name="Vergi">
+    <informationRequirement id="InformationRequirement_15zhqdy">
+      <requiredDecision href="#Decision_0aglil2" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_12qiao7">
+      <input id="InputClause_0hvxmdj" label="matrah">
+        <inputExpression id="LiteralExpression_0jb0ijo" typeRef="number">
+          <text>matrah</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_05wn375" label="vergi" name="vergi" typeRef="number" />
+      <rule id="DecisionRule_0mpznzy">
+        <inputEntry id="UnaryTests_1o334mf">
+          <text>[0..32000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0x78e1t">
+          <text>matrah*0.15</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ziaap0">
+        <inputEntry id="UnaryTests_1jstra4">
+          <text>(32000..70000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o4pwla">
+          <text>((matrah-32000)*0.2)+4800</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17oyygt">
+        <inputEntry id="UnaryTests_1x1ktdg">
+          <text>(70000..250000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uqqvpm">
+          <text>((matrah-70000)*0.27)+12400</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ty8lki">
+        <inputEntry id="UnaryTests_1ln2jbu">
+          <text>(250000..880000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tydt0o">
+          <text>((matrah-250000)*0.35)+61000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qip7ms">
+        <inputEntry id="UnaryTests_0owcmxg">
+          <text>not(&lt;880000)</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1p51z7l">
+          <text>((matrah-880000)*0.4)+281500</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_05sfxgt">
+      <dmndi:DMNEdge id="DMNEdge_1eo5a36" dmnElementRef="InformationRequirement_15zhqdy">
+        <di:waypoint x="250" y="300" />
+        <di:waypoint x="250" y="180" />
+        <di:waypoint x="250" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1pi8h7o" dmnElementRef="InputData_12t6q7u">
+        <dc:Bounds height="45" width="125" x="187" y="537" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1yqy6ke" dmnElementRef="InformationRequirement_12byzg0">
+        <di:waypoint x="250" y="537" />
+        <di:waypoint x="220" y="400" />
+        <di:waypoint x="220" y="380" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0dfid1t" dmnElementRef="InputData_04avhc9">
+        <dc:Bounds height="45" width="125" x="427" y="537" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0d53rj8" dmnElementRef="InformationRequirement_1ci3f5q">
+        <di:waypoint x="490" y="537" />
+        <di:waypoint x="280" y="400" />
+        <di:waypoint x="280" y="380" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1v4d7xe" dmnElementRef="Decision_0aglil2">
+        <dc:Bounds height="80" width="180" x="160" y="300" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1pvkmpc" dmnElementRef="Decision_1adfd1s">
+        <dc:Bounds height="80" width="180" x="160" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

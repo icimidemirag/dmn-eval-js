@@ -47,8 +47,7 @@ app.post("/evalute", async (req, res) => {
     }
     const xml = data.toString();
     const data2 = await eval(req.body.id, xml, req.body.params); // başka bi rule'un outputunu input olarak alamıyor
-    const data3 = await evulate(xml, req.body.id, req.body.params);
-    res.json(data3);
+    res.json(data2);
   });
 });
 
