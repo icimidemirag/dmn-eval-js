@@ -5,7 +5,7 @@ const { readFileSync } = require('fs');
 const params = {
   giris: 'b'
 };
-const file = './table.dmn';
+const file = './test1.dmn';
 const dmnTable = 'Decision_0te96os';
  
 // read file and run test function
