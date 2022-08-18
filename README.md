@@ -1,7 +1,9 @@
+[install stx-dmn-eval-js](https://www.npmjs.com/package/stx-dmn-eval-js)
+<br>
 (The examples in this repo were created at https://demo.bpmn.io/dmn. You can download the rules you created here and use them directly in the library.)
+<br>
 (Bu repodaki örnekler https://demo.bpmn.io/dmn adresinde oluşturulmuştur. Siz de burada oluşturduğunuz kuralları indirip direkt olarak kütüphanede kullanabilirsiniz.)
 
-[install stx-dmn-eval-js](https://www.npmjs.com/package/stx-dmn-eval-js)
 
 [English](#About) | [Türkçe](#Hakkında)
 
