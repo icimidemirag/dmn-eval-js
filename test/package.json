@@ -1,7 +1,5 @@
 {
   "dependencies": {
-    "dmn-evaluator": "^0.1.0",
-    "js-feel": "^1.4.7",
     "stx-dmn-eval-js": "^1.6.0"
   }
 }

@@ -1,12 +1,13 @@
-const { evaluateDecision, parseDmnXml } = require('dmn-evaluator');
+const { decisionTable } = require('stx-dmn-eval-js');
 const { readFileSync } = require('fs');
  
 // prepare input
 const params = {
-  giris: 'b'
+  maas: 10000,
+  sigorta: true
 };
-const file = './test1.dmn';
-const dmnTable = 'Decision_0te96os';
+const file = './test-tax.dmn';
+const dmnTable = 'Decision_1adfd1s';
  
 // read file and run test function
 try {
@@ -19,8 +20,8 @@ try {
 // test parser and evaluater
 async function test(xml, dmnTable, params) {
     try {
-        const parsedDecisionTable = await parseDmnXml(xml)
-        const result = evaluateDecision(dmnTable, parsedDecisionTable, params);
+        const parsedDecisionTable = await decisionTable.parseDmnXml(xml)
+        const result = decisionTable.evaluateDecision(dmnTable, parsedDecisionTable, params);
         console.log('result: ', result);
     } catch (err) {
         console.error('error: ', err);

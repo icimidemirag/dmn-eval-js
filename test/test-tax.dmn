@@ -61,15 +61,39 @@
           <text>[0..32000]</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0x78e1t">
-          <text>matrah*2</text>
+          <text>matrah*0.15</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ziaap0">
         <inputEntry id="UnaryTests_1jstra4">
-          <text>[32000..72000]</text>
+          <text>(32000..70000]</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1o4pwla">
-          <text>matrah*3</text>
+          <text>((matrah-32000)*0.2)+4800</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17oyygt">
+        <inputEntry id="UnaryTests_1x1ktdg">
+          <text>(70000..250000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uqqvpm">
+          <text>((matrah-70000)*0.27)+12400</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ty8lki">
+        <inputEntry id="UnaryTests_1ln2jbu">
+          <text>(250000..880000]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tydt0o">
+          <text>((matrah-250000)*0.35)+61000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qip7ms">
+        <inputEntry id="UnaryTests_0owcmxg">
+          <text>not(&lt;880000)</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1p51z7l">
+          <text>((matrah-880000)*0.4)+281500</text>
         </outputEntry>
       </rule>
     </decisionTable>

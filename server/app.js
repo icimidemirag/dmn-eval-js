@@ -35,10 +35,20 @@ app.post("/xml", async (req, res) => {
 });
 
 app.post("/evalute", async (req, res) => {
-  // evulate
+  // evulate fonksiyonu dmn-evaluator kütüphanesini kullanır.
   // const data = await evulate(xml, req.body.id, req.body.params);
-  // eval
-  // const data2 = await eval(req.body.id, xml, req.body.params);
+  /*giriş değişkenlerinin isimlerini kullanarak işlem gerçekleştiremiyoruz.
+  örneğin input1 şeklinde giriş değişkenimiz olduğu durumda output1 şeklindeki outputumuza 
+  (input1 + 2) gibi değişken adını kullanarak işlem yapamıyor, bu yüzden bu kütüphaneye kullanmıyoruz.
+  zaten altta bulunan kütüphane bu kütüphanenin güncel hali sayılır ve 
+  değişken adları kullanarak işlem yapmaya olanak sağlar*/
+
+  // evul fonksiyonu stx-dmn-eval-js kütüphanesini kullanır.
+  // const data = await eval(req.body.id, xml, req.body.params);
+  /* Şayet bpmn.io sitesi üzerinde dmn kısmında, iki decision table arasındaki bağlantıyı ok çıkararak değil de
+  ilk tabloyu oluşturduktan sonra sağ yanda çıkan decision table simgesine tıklayıp kendiliğinden bağlanmış
+  tabloyu kullanırsanız bir tablodaki outputu sonraki tablonun inputu olarak kullanabilirsiniz.
+  */
 
   fs.readFile(`${__dirname}/uploads/${req.body.file}`, async (err, data) => {
     if (err) {
@@ -46,7 +56,7 @@ app.post("/evalute", async (req, res) => {
       return res.status(500).send(err);
     }
     const xml = data.toString();
-    const data2 = await eval(req.body.id, xml, req.body.params); // başka bi rule'un outputunu input olarak alamıyor
+    const data2 = await eval(req.body.id, xml, req.body.params);
     res.json(data2);
   });
 });

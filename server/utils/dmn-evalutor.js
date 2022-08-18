@@ -11,7 +11,6 @@ async function evalute(xml, dmnTable, params) {
         console.error('error: ', err);
         return err
     }
- 
 }
 
 module.exports = evalute
