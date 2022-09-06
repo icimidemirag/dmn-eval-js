@@ -17,6 +17,8 @@ app.use(
 
 app.use(morgan("dev"));
 
+// camunda modeler ile dmn oluşturmak -daha fazla kişiselleştirmeye olanak tanıması açısından id ataması gibi- 
+// daha kolaydır fakat direkt web uygulaması olan bpmn.io da kullanılabilir.
 app.post("/xml", async (req, res) => {
   if (req.files) {
     console.log(req.files.file);
