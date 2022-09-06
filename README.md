@@ -1,8 +1,8 @@
 [install stx-dmn-eval-js](https://www.npmjs.com/package/stx-dmn-eval-js)
 <br>
-(The examples in this repo were created at https://demo.bpmn.io/dmn. You can download the rules you created here and use them directly in the library.)
+(The examples in this repo were created at https://demo.bpmn.io/dmn. You can download the rules you created here and use them directly in the library. It also supports models built with Camunda Modeler Platform 8.)
 <br>
-(Bu repodaki örnekler https://demo.bpmn.io/dmn adresinde oluşturulmuştur. Siz de burada oluşturduğunuz kuralları indirip direkt olarak kütüphanede kullanabilirsiniz.)
+(Bu repodaki örnekler https://demo.bpmn.io/dmn adresinde oluşturulmuştur. Siz de burada oluşturduğunuz kuralları indirip direkt olarak kütüphanede kullanabilirsiniz. Camunda Modeler Platform 8 ile oluşturulmuş modelleri de destekler.)
 
 
 [English](#About) | [Türkçe](#Hakkında)
